@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Ular Tangga</title>
+    <link rel="stylesheet" href="ulatangga.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="./index.html">Beranda</a></li>
+            <li><a href="./tebakgambar.html">Tebak Gambar</a></li>
+            <li><a href="./puzzle.html">Puzzle</a></li>
+            <li><a href="./ulatangga.html" class="active">Ular Tangga</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Game Ular Tangga</h1>
+        <p>Serunya bermain game ular tangga dengan tampilan yang modern!</p>
+    </header>
+
+    <main>
+        <div id="game-board"></div>
+        <div id="controls">
+            <div id="dice">
+                <div class="face" id="dice-face"></div>
+            </div>
+            <button id="roll-dice">🎲 Lempar Dadu</button>
+            <p id="dice-result"></p>
+            <p id="turn">Giliran: Pemain 1</p>
+        </div>
+    </main>
+    <audio id="crying-sound" src="sounds/crying.mp3" preload="auto"></audio>
+    <audio id="cheering-sound" src="sounds/cheering.mp3" preload="auto"></audio>
+    
+    <footer>
+        <p>&copy; 2024 Game Ular Tangga. Dibuat dengan 💖</p>
+    </footer>
+
+    <script src="ulatangga.js"></script>
+</body>
+</html>

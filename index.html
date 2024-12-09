@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Modern</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#" onclick="setActive(this)">Kalkulator</a></li>
+            <li class="dropdown">
+                <a href="bahasa" onclick="toggleDropdown('languagesDropdown'); setActive(this)">Belajar Bahasa</a>
+                <ul class="dropdown-content" id="languagesDropdown">
+                    <li><a href="#" onclick="setActive(this)">Bahasa Jawa</a></li>
+                    <li><a href="#" onclick="setActive(this)">Bahasa Inggris</a></li>
+                    <li><a href="#" onclick="setActive(this)">Bahasa Jepang</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#game" onclick="toggleDropdown('gamesDropdown'); setActive(this)">Game</a>
+                <ul class="dropdown-content" id="gamesDropdown">
+                    <li><a href="./tebakgambar.html" onclick="setActive(this)">Tebak Gambar</a></li>
+                    <li><a href="#" onclick="setActive(this)">Tebak Kata</a></li>
+                    <li><a href="#" onclick="setActive(this)">Main Ular Tangga</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Kalkulator -->
+    <div class="calculator" id="calculator">
+        <input type="text" id="display" placeholder="0" disabled>
+        <div class="buttons">
+            <button onclick="clearDisplay()" class="clear">C</button>
+            <button onclick="toggleSign()">+/-</button>
+            <button onclick="appendValue('%')">%</button>
+            <button onclick="appendValue('/')">/</button>
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue('*')">*</button>
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="appendValue('-')">-</button>
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="appendValue('+')">+</button>
+            <button onclick="appendValue('0')" class="zero">0</button>
+            <button onclick="appendValue('.')">.</button>
+            <button onclick="calculateSquareRoot()">√</button>
+            <button onclick="calculate()" class="equals">=</button>
+        </div>
+        <div class="currency-converter">
+            <select id="currency">
+                <option value="usdToIdr">USD to IDR</option>
+                <option value="idrToUsd">IDR to USD</option>
+            </select>
+            <button onclick="convertCurrency()">Convert</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

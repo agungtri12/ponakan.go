@@ -1,0 +1,233 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e3ffe7, #d9e7ff);
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    background-color: #004aad;
+    padding: 10px 0;
+    list-style: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #ffd700;
+}
+
+/* Header */
+header h1 {
+    font-size: 36px;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Game Container */
+#game-container {
+    margin: 20px auto;
+    max-width: 500px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#game-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+#choices-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.choice {
+    padding: 10px;
+    background-color: #004aad;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.choice:hover {
+    background-color: #003399;
+}
+
+/* Popup */
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 1000;
+    animation: popUp 0.5s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.popup-content h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #ff6f61;
+}
+
+.popup-content p {
+    font-size: 20px;
+}
+
+/* Animasi Centang dengan Efek Menarik */
+.checkmark-animation {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #8ce99a, #74c69d);
+    position: relative;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 0 10px #ffffff;
+    animation: popCircle 0.4s ease-out forwards;
+}
+
+/* Lingkaran Cahaya */
+.checkmark-animation::after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(140, 233, 154, 0.3) 30%, transparent 70%);
+    z-index: -1;
+    animation: pulseEffect 1.2s infinite ease-in-out;
+}
+
+/* Centang */
+.checkmark-animation::before {
+    content: "";
+    position: absolute;
+    left: 72%;
+    top: 40%;
+    width: 25px;
+    height: 50px;
+    border: solid #fff;
+    border-width: 0 6px 6px 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    transform-origin: left top;
+    animation: drawCheckmark 0.5s ease-out 0.4s forwards;
+}
+
+/* Animasi Lingkaran Pop */
+@keyframes popCircle {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animasi Gambar Centang */
+@keyframes drawCheckmark {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+}
+
+/* Efek Denyut Cahaya */
+@keyframes pulseEffect {
+    0% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+}
+
+/* Animasi untuk Popup Kesalahan */
+#popup-error {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 0, 0, 0.7);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 1000;
+    animation: popError 0.5s ease;
+}
+
+#popup-error .popup-content h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #ff6f61;
+}
+
+#popup-error .popup-content p {
+    font-size: 20px;
+}
+
+@keyframes popError {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+

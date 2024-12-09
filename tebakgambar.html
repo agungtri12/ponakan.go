@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Tebak Gambar Anak</title>
+    <link rel="stylesheet" href="tebakgambar.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="./index.html">Beranda</a></li>
+            <li><a href="./tebakgambar.html" class="active">Tebak Gambar</a></li>
+            <li><a href="./puzzle.html">Puzzle</a></li>
+            <li><a href="./ulatangga.html">Ular Tangga</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Game Tebak Gambar Anak</h1>
+        <p>Coba tebak gambar dengan seru dan asyik!</p>
+    </header>
+
+    <main>
+        <div id="game-container">
+            <h2>Level <span id="current-level">1</span></h2>
+            <img id="game-image" src="images/level1/img1.png" alt="Gambar untuk ditebak">
+            <p id="progress">Soal ke <span id="current-progress">1</span> dari 20</p>
+            <div id="choices-container"></div>
+        </div>
+    </main>
+
+    <!-- Popup -->
+    <div id="popup" class="hidden">
+        <div class="popup-content">
+            <h2>🎉 Hebat! 🎉</h2>
+            <div class="checkmark-animation"></div>
+            <p>Kamu benar! Lanjut ke soal berikutnya!</p>
+        </div>
+    </div>
+<!-- Incorrect Popup -->
+<div id="incorrect-popup" class="hidden">
+    <div class="popup-content">
+        <h2>🙁 Ups! Salah. Coba lagi!</h2>
+    </div>
+</div>
+
+    <footer>
+        <p>&copy; 2024 Game Anak. Dibuat dengan 💖 dan warna-warni!</p>
+    </footer>
+
+    <script src="tebakgambar.js"></script>
+</body>
+</html>

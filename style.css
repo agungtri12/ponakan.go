@@ -1,0 +1,226 @@
+/* Styling untuk body */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff8a00, #e52e71);
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    position: relative;
+    padding: 0 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+/* Active class */
+.navbar a.active, .navbar .dropdown-content a.active {
+    background-color: #ff8a00;
+    border-radius: 5px;
+}
+
+.navbar a:hover, .navbar .dropdown-content a:hover {
+    background-color: #ff8a00;
+    border-radius: 5px;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.navbar .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #ff8a00;
+}
+
+.calculator {
+    width: 350px;
+    background: #2c2f38;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-top: 20px; /* Adding space below navbar */
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Calculator Styling */
+#display {
+    width: 100%;
+    height: 70px;
+    border: none;
+    background: #333;
+    color: #fff;
+    text-align: right;
+    font-size: 2.5rem;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+}
+
+#display:focus {
+    background: #444;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #444;
+}
+
+button {
+    padding: 25px;
+    font-size: 1.5rem;
+    border: none;
+    background: #555;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+button:hover {
+    background: #ff8a00;
+    transform: translateY(-5px);
+}
+
+button:active {
+    background: #e52e71;
+    transform: translateY(2px);
+}
+
+button.equals {
+    background: #0066cc;
+    color: white;
+    grid-column: span 4;
+}
+
+button.clear {
+    background: #cc0000;
+}
+
+button.zero {
+    grid-column: span 2;
+}
+
+button + button {
+    border-left: 2px solid #444;
+}
+
+/* Currency Converter Styling */
+.currency-converter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #333;
+    border-top: 2px solid #444;
+    border-radius: 0 0 20px 20px;
+}
+
+.currency-converter select, .currency-converter button {
+    font-size: 1rem;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    background: #555;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.currency-converter select:hover, .currency-converter button:hover {
+    background: #ff8a00;
+}
+
+.currency-converter select:focus, .currency-converter button:focus {
+    outline: none;
+    background: #ff8a00;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+    body {
+        padding: 0 10px; /* Add padding to prevent content from touching the edges */
+    }
+
+    .calculator {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    #display {
+        font-size: 2rem;
+        padding: 15px;
+    }
+
+    button {
+        padding: 20px;
+        font-size: 1.4rem;
+    }
+
+    button.zero {
+        grid-column: span 2; /* Make zero button span two columns on small screens */
+    }
+
+    .currency-converter {
+        flex-direction: column; /* Stack the currency converter components */
+        align-items: flex-start; /* Align to the start */
+    }
+
+    .currency-converter select, .currency-converter button {
+        width: 100%; /* Make select and button take full width */
+        margin: 5px 0;
+    }
+}
+
+/* Responsive Design for larger screens */
+@media (min-width: 601px) {
+    .calculator {
+        width: 350px;
+        margin-top: 20px;
+    }
+}

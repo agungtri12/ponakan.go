@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Edukasi - Tebak Angka atau Huruf</title>
+  <link rel="stylesheet" href="edukasi.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Game Edukasi - Tebak Angka atau Huruf</h1>
+    
+    <div id="score-board">
+      <p>Poin: <span id="score">0</span></p>
+      <p>Level: <span id="level">1</span></p>
+    </div>
+
+    <div id="question-container">
+      <p id="question">Tebak angka atau huruf yang muncul!</p>
+    </div>
+
+    <div id="answer-container">
+      <input type="text" id="user-input" placeholder="Tulis jawaban kamu" />
+      <button id="submit-answer">Kirim Jawaban</button>
+      <button id="voice-answer">Jawab dengan Suara</button>
+    </div>
+    
+    <div id="message" class="hidden">
+      <p id="message-text"></p>
+    </div>
+
+    <button id="next-question" class="hidden">Pertanyaan Berikutnya</button>
+  </div>
+
+  <script src="edukasi.js"></script>
+</body>
+</html>
